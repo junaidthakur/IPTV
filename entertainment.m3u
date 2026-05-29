@@ -1,0 +1,20 @@
+#EXTINF:-1 tvg-id="zee_bangla" tvg-name="Zee Bangla VIP" tvg-logo="https://images.toffeelive.com/images/program/340/logo/240x240/mobile_logo_094417001655891123.png" group-title="ENTERTAINMENT", Zee Bangla
+https://mflixott.com/tv/toffee/live.php?id=zee_bangla&e=.m3u8
+
+#EXTINF:-1 tvg-id="star_jalsha" tvg-name="Star Jalsha" tvg-logo="https://images.toffeelive.com/images/program/336/logo/240x240/mobile_logo_913840001655890983.png" group-title="ENTERTAINMENT", Star Jalsha
+https://mflixott.com/tv/toffee/live.php?id=star_jalsha&e=.m3u8
+
+#EXTINF:-1 tvg-id="sony_atv" tvg-name="Sony Aath" tvg-logo="https://images.toffeelive.com/images/program/338/logo/240x240/mobile_logo_811654001655891077.png" group-title="ENTERTAINMENT", Sony Aath
+https://mflixott.com/tv/toffee/live.php?id=sony_atv&e=.m3u8
+
+#EXTINF:-1 tvg-id="colors_bangla" tvg-name="Colors Bangla" tvg-logo="https://images.toffeelive.com/images/program/339/logo/240x240/mobile_logo_436154001655891100.png" group-title="ENTERTAINMENT", Colors Bangla
+https://mflixott.com/tv/toffee/live.php?id=colors_bangla&e=.m3u8
+
+#EXTINF:-1 tvg-id="star_plus" tvg-name="Star Plus" tvg-logo="https://images.toffeelive.com/images/program/35341/logo/240x240/mobile_logo_053155001655890786.png" group-title="ENTERTAINMENT", Star Plus
+https://mflixott.com/tv/toffee/live.php?id=star_plus&e=.m3u8
+
+#EXTINF:-1 tvg-id="sony_sab" tvg-name="Sony Sab" tvg-logo="https://images.toffeelive.com/images/program/35342/logo/240x240/mobile_logo_609477001655890833.png" group-title="ENTERTAINMENT", Sony Sab
+https://mflixott.com/tv/toffee/live.php?id=sony_sab&e=.m3u8
+
+#EXTINF:-1 tvg-id="sony_tv" tvg-name="Sony Entertainment" tvg-logo="https://images.toffeelive.com/images/program/35340/logo/240x240/mobile_logo_560124001655890714.png" group-title="ENTERTAINMENT", Sony TV
+https://mflixott.com/tv/toffee/live.php?id=sony_tv&e=.m3u8
