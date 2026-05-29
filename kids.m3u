@@ -1,0 +1,5 @@
+#EXTINF:-1 tvg-id="nick" tvg-name="Nick" tvg-logo="https://images.toffeelive.com/images/program/35359/logo/240x240/mobile_logo_290124001655891823.png" group-title="KIDS", Nick
+https://mflixott.com/tv/toffee/live.php?id=nick&e=.m3u8
+
+#EXTINF:-1 tvg-id="sonic_nick" tvg-name="Sonic Nick" tvg-logo="https://images.toffeelive.com/images/program/35360/logo/240x240/mobile_logo_436154001655891845.png" group-title="KIDS", Nick Jr
+https://mflixott.com/tv/toffee/live.php?id=sonic_nick&e=.m3u8
