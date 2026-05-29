@@ -6,7 +6,7 @@
     <title>Live TV IPTV</title>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
-        /* আপনার স্ক্রিনশটের মতো প্রিমিয়াম ডার্ক থিম UI */
+        /* প্রিমিয়াম ডার্ক থিম UI */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background-color: #000; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; padding: 15px; }
         
@@ -43,7 +43,7 @@
         video { 
             width: 100% !important; 
             height: 100% !important; 
-            object-fit: cover !important; /* কালো দাগ দূর করার জন্য */
+            object-fit: cover !important; /* কালো বর্ডার বা দাগ দূর করার জন্য */
         }
     </style>
 </head>
@@ -62,26 +62,26 @@
     </div>
 
     <script>
+        // আপনার দেওয়া নতুন ক্যাটাগরি এবং নিখুঁত RAW লিংকগুলোর লিস্ট
         const categoriesData = [
-            { id: "recent", name: "Recent Watch", url: "YOUR_RAW_LINK_HERE" },
-            { id: "all", name: "ALL CHANNELS", url: "YOUR_RAW_LINK_HERE" },
-            { id: "movies", name: "MOVIES HD", url: "YOUR_RAW_LINK_HERE" },
-            { id: "entertainment", name: "ENTERTAINMENT", url: "YOUR_RAW_LINK_HERE" },
-            { id: "kids", name: "KIDS", url: "YOUR_RAW_LINK_HERE" },
-            { id: "music", name: "MUSIC", url: "YOUR_RAW_LINK_HERE" },
-            { id: "news", name: "NEWS", url: "YOUR_RAW_LINK_HERE" },
-            { id: "bd_tv", name: "BD TV", url: "https://raw.githubusercontent.com/junaidthakur/PlayCast/main/bangladeshi.m3u" },
-            { id: "sports", name: "SPORTS", url: "YOUR_RAW_LINK_HERE" }
+            { id: "movies", name: "MOVIES HD", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/movieshd.m3u" },
+            { id: "entertainment", name: "ENTERTAINMENT", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/entertainment.m3u" },
+            { id: "sports", name: "SPORTS", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/sports.m3u" },
+            { id: "kids", name: "KIDS", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/kids.m3u" },
+            { id: "news", name: "NEWS", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/news.m3u" },
+            { id: "music", name: "MUSIC AND OTHERS", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/musicandother.m3u" },
+            { id: "bd_tv", name: "BD TV", url: "https://raw.githubusercontent.com/junaidthakur/PlayCast/main/bangladeshi.m3u" }
         ];
 
         let parsedData = {}; 
 
+        // অ্যাপ চালু হওয়ার সাথে সাথে ডাটা ফেচ করার ফাংশন
         async function initApp() {
             const container = document.getElementById('categoryContainer');
-            container.innerHTML = "<p style='padding:20px; color:#aaa; text-align:center;'>Loading app data...</p>";
+            container.innerHTML = "<p style='padding:20px; color:#aaa; text-align:center;'>Loading channels count...</p>";
 
             for (let cat of categoriesData) {
-                if (cat.url === "YOUR_RAW_LINK_HERE" || !cat.url) {
+                if (!cat.url) {
                     parsedData[cat.id] = [];
                     continue;
                 }
@@ -100,6 +100,7 @@
             displayCategories();
         }
 
+        // .m3u ফাইল পার্স করার লজিক
         function parseM3U(data) {
             const lines = data.split('\n');
             const channels = [];
@@ -117,6 +118,7 @@
             return channels;
         }
 
+        // মেইন স্ক্রিনে ক্যাটাগরি এবং পাশে লাইভ চ্যানেল কাউন্ট দেখানো
         function displayCategories() {
             const container = document.getElementById('categoryContainer');
             container.innerHTML = "";
@@ -140,6 +142,7 @@
             });
         }
 
+        // ক্যাটাগরির ভেতরে চ্যানেলের লিস্ট দেখানো
         function showChannels(catId, catName) {
             document.getElementById('categoryContainer').style.display = 'none';
             document.getElementById('channelContainer').style.display = 'flex';
@@ -151,7 +154,7 @@
 
             const channels = parsedData[catId] || [];
             if (channels.length === 0) {
-                container.innerHTML = "<p style='padding:20px; color:#aaa; text-align:center;'>No channels available or link not updated.</p>";
+                container.innerHTML = "<p style='padding:20px; color:#aaa; text-align:center;'>No channels available in this category.</p>";
                 return;
             }
 
@@ -174,7 +177,7 @@
             displayCategories();
         }
 
-        // 🎬 ল্যান্ডস্কেপ মোডে জোরপূর্বক ফুল স্ক্রিন করার জন্য নতুন লজিক
+        // 🎬 ল্যান্ডস্কেপ মোডে আল্ট্রা ফুল স্ক্রিন প্লে করার লজিক
         function playLive(url) {
             const wrapper = document.getElementById('playerWrapper');
             const video = document.getElementById('videoPlayer');
@@ -191,7 +194,7 @@
 
             video.play();
 
-            // 🛠️ ভিডিও ট্যাগের বদলে পুরো ভিডিও কন্টেইনারকে ফুলস্ক্রিন করা হচ্ছে
+            // পুরো কন্টেইনারকে ফুলস্ক্রিন করা হচ্ছে
             if (wrapper.requestFullscreen) {
                 wrapper.requestFullscreen();
             } else if (wrapper.webkitRequestFullscreen) {
@@ -202,17 +205,17 @@
                 wrapper.msRequestFullscreen();
             }
 
-            // 🔄 ফুলস্ক্রিন হওয়ার পর স্ক্রিনকে ল্যান্ডস্কেপ মোডে লক করা
+            // 🔄 স্ক্রিনকে ল্যান্ডস্কেপ মোডে লক করা (মোবাইলের অটো রোটেট অন রাখতে হবে)
             setTimeout(() => {
                 if (screen.orientation && screen.orientation.lock) {
                     screen.orientation.lock('landscape').catch(function(error) {
                         console.log("Orientation lock failed: ", error);
                     });
                 }
-            }, 200); // ব্রাউজারকে ফুলস্ক্রিন প্রসেস করার জন্য সামান্য একটু সময় দেওয়া হয়েছে
+            }, 200);
         }
 
-        // ফুল স্ক্রিন বন্ধ বা ব্যাক করলে আবার নরমাল করা হবে
+        // ফুল স্ক্রিন থেকে বের হলে রিমুভ ও রিসেট লজিক
         document.addEventListener('fullscreenchange', handleExitFullscreen);
         document.addEventListener('webkitfullscreenchange', handleExitFullscreen);
         document.addEventListener('mozfullscreenchange', handleExitFullscreen);
@@ -227,7 +230,6 @@
                 video.src = ""; 
                 wrapper.style.display = 'none';
                 
-                // ওরিয়েন্টেশন আনলক করে নরমাল করা হচ্ছে
                 if (screen.orientation && screen.orientation.unlock) {
                     screen.orientation.unlock();
                 }
