@@ -1,0 +1,8 @@
+#EXTINF:-1 tvg-id="discovery_sd" tvg-name="Discovery" tvg-logo="https://images.toffeelive.com/images/program/18097/logo/240x240/mobile_logo_297723001673195119.png" group-title="NEWS", Discovery
+https://mflixott.com/tv/toffee/live.php?id=discovery_sd&e=.m3u8
+
+#EXTINF:-1 tvg-id="USA & Canada" tvg-name="Millennium 24 USA" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="NEWS", Millennium 24 USA
+https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/mnews24.stream/playlist.m3u8
+
+#EXTINF:-1 tvg-id="USA & Canada" tvg-name="Millennium TV USA" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="NEWS", Millennium TV USA
+https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/millenniumtv-odr-up2.stream/playlist.m3u8
