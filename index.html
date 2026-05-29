@@ -62,15 +62,15 @@
     </div>
 
     <script>
-        // আপনার দেওয়া গিটহাবের প্রতিটা ক্যাটাগরির RAW ফাইলের লিংক
+        // আপনার দেওয়া গিটহাবের প্রতিটা ক্যাটাগরির RAW ফাইলের লিংক (BD TV সহ)
         const categoriesData = [
+            { id: "bd_tv", name: "BD TV", url: "https://raw.githubusercontent.com/junaidthakur/PlayCast/main/bangladeshi.m3u" },
             { id: "movies", name: "MOVIES HD", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/movieshd.m3u" },
             { id: "entertainment", name: "ENTERTAINMENT", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/entertainment.m3u" },
             { id: "sports", name: "SPORTS", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/sports.m3u" },
             { id: "kids", name: "KIDS", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/kids.m3u" },
             { id: "news", name: "NEWS", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/news.m3u" },
-            { id: "music", name: "MUSIC AND OTHERS", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/musicandother.m3u" },
-            { id: "bd_tv", name: "BD TV", url: "https://raw.githubusercontent.com/junaidthakur/PlayCast/main/bangladeshi.m3u" }
+            { id: "music", name: "MUSIC AND OTHERS", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/musicandother.m3u" }
         ];
 
         let parsedData = {}; 
@@ -80,7 +80,7 @@
             const container = document.getElementById('categoryContainer');
             container.innerHTML = "<p style='padding:20px; color:#aaa; text-align:center;'>Loading channels from GitHub...</p>";
 
-            // গিটহাবের ব্লকিং এড়ানোর জন্য অল্টারনেটিভ ফ্রি প্রক্সি
+            // গিটহাবের ব্লকিং এড়ানোর জন্য অল্টারনেティブ ফ্রি প্রক্সি
             const proxyUrl = "https://api.allorigins.win/raw?url=";
 
             for (let cat of categoriesData) {
@@ -89,7 +89,6 @@
                     continue;
                 }
                 try {
-                    // প্রক্সি দিয়ে গিটহাবের raw ফাইলটি ফেচ করা হচ্ছে
                     const response = await fetch(proxyUrl + encodeURIComponent(cat.url));
                     if (response.ok) {
                         const m3uText = await response.text();
@@ -98,8 +97,6 @@
                         parsedData[cat.id] = [];
                     }
                 } catch (e) {
-                    console.log("Fetch error, trying backup fetch...", e);
-                    // প্রক্সি ছাড়া সাধারণ ব্যাকআপ চেষ্টা
                     try {
                         const resBackup = await fetch(cat.url);
                         if(resBackup.ok) {
@@ -114,17 +111,33 @@
             displayCategories();
         }
 
-        // গিটহাব থেকে আসা .m3u ডাটা পার্স করার লজিক
+        // উন্নত .m3u ফাইল পার্সার (যা BD TV ফাইলের ফাঁকা লাইনের সমস্যা ফিক্স করবে)
         function parseM3U(data) {
             const lines = data.split('\n');
             const channels = [];
+            
             for (let i = 0; i < lines.length; i++) {
                 let line = lines[i].trim();
+                
                 if (line.startsWith('#EXTINF:')) {
                     const nameParts = line.split(',');
                     const channelName = nameParts[nameParts.length - 1].trim();
-                    const nextLine = lines[i + 1] ? lines[i + 1].trim() : "";
-                    if (nextLine && !nextLine.startsWith('#')) {
+                    
+                    // পরবর্তী লাইনগুলোর মধ্য থেকে ফাঁকা লাইন বাদ দিয়ে আসল লিংকের লাইনটি খুঁজে বের করার লজিক
+                    let nextLine = "";
+                    let j = i + 1;
+                    while (j < lines.length) {
+                        let potentialLink = lines[j].trim();
+                        if (potentialLink !== "") {
+                            if (!potentialLink.startsWith('#')) {
+                                nextLine = potentialLink;
+                            }
+                            break;
+                        }
+                        j++;
+                    }
+                    
+                    if (nextLine) {
                         channels.push({ name: channelName, url: nextLine });
                     }
                 }
@@ -191,7 +204,7 @@
             displayCategories();
         }
 
-        // 🎬 ল্যান্ডস্কেপ মোডে আল্ট্রা ফুল স্ক্রিন প্লে করার লজিক
+        // 🎬 ল্যান্ডস্কেপ মোডে আল্ট্রา ফুল স্ক্রিন প্লে করার লজিক
         function playLive(url) {
             const wrapper = document.getElementById('playerWrapper');
             const video = document.getElementById('videoPlayer');
@@ -271,7 +284,7 @@
             }
         });
 
-        // অ্যাপ চালু হওয়ামাত্র গিটহাব ফাইল রিড করবে
+        // অ্যাপ চালু হওয়ামাত্র গিটহাব ফাইলটি রিড করবে
         initApp();
     </script>
 </body>
