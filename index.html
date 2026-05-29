@@ -62,63 +62,83 @@
     </div>
 
     <script>
-        // আপনার টেক্সট ফাইলের সব চ্যানেল সরাসরি কোডের ভেতরেই অ্যাড করে দেওয়া হলো
-        const tvData = {
-            "movies": [
-                { name: "Zee Cinema", url: "https://mflixott.com/tv/toffee/live.php?id=zee_cinema&e=.m3u8" },
-                { name: "Sony Max", url: "https://mflixott.com/tv/toffee/live.php?id=sony_max&e=.m3u8" },
-                { name: "Star Gold", url: "https://mflixott.com/tv/toffee/live.php?id=star_gold&e=.m3u8" },
-                { name: "Colors Cineplex", url: "https://mflixott.com/tv/toffee/live.php?id=colors_cineplex&e=.m3u8" },
-                { name: "Jalsha Movies", url: "https://mflixott.com/tv/toffee/live.php?id=jalsha_movies&e=.m3u8" }
-            ],
-            "entertainment": [
-                { name: "Zee Bangla", url: "https://mflixott.com/tv/toffee/live.php?id=zee_bangla&e=.m3u8" },
-                { name: "Star Jalsha", url: "https://mflixott.com/tv/toffee/live.php?id=star_jalsha&e=.m3u8" },
-                { name: "Sony Aath", url: "https://mflixott.com/tv/toffee/live.php?id=sony_atv&e=.m3u8" },
-                { name: "Colors Bangla", url: "https://mflixott.com/tv/toffee/live.php?id=colors_bangla&e=.m3u8" },
-                { name: "Star Plus", url: "https://mflixott.com/tv/toffee/live.php?id=star_plus&e=.m3u8" },
-                { name: "Sony Sab", url: "https://mflixott.com/tv/toffee/live.php?id=sony_sab&e=.m3u8" },
-                { name: "Sony TV", url: "https://mflixott.com/tv/toffee/live.php?id=sony_tv&e=.m3u8" }
-            ],
-            "sports": [
-                { name: "T sports", url: "https://tvsen7.aynaott.com/tsports-hd/tracks-v1a1/mono.ts.m3u8" },
-                { name: "Sony Ten 1", url: "https://mflixott.com/tv/toffee/live.php?id=sony_ten_1&e=.m3u8" },
-                { name: "Sony Ten 2", url: "https://mflixott.com/tv/toffee/live.php?id=sony_ten_2&e=.m3u8" },
-                { name: "Sony Sports Ten 5", url: "https://mflixott.com/tv/toffee/live.php?id=sony_six&e=.m3u8" },
-                { name: "Star Sports 1", url: "https://mflixott.com/tv/toffee/live.php?id=star_sports_1&e=.m3u8" },
-                { name: "Star Sports 2", url: "https://mflixott.com/tv/toffee/live.php?id=star_sports_2&e=.m3u8" },
-                { name: "Star Sports Select 1", url: "https://mflixott.com/tv/toffee/live.php?id=star_sports_select_1&e=.m3u8" }
-            ],
-            "kids": [
-                { name: "Nick", url: "https://mflixott.com/tv/toffee/live.php?id=nick&e=.m3u8" },
-                { name: "Nick Jr", url: "https://mflixott.com/tv/toffee/live.php?id=sonic_nick&e=.m3u8" }
-            ],
-            "news": [
-                { name: "Discovery", url: "https://mflixott.com/tv/toffee/live.php?id=discovery_sd&e=.m3u8" },
-                { name: "Millennium 24 USA", url: "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/mnews24.stream/playlist.m3u8" },
-                { name: "Millennium TV USA", url: "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/millenniumtv-odr-up2.stream/playlist.m3u8" }
-            ],
-            "music": [
-                { name: "NRB TV Canada", url: "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/nrbtv.stream/playlist.m3u8" }
-            ]
-        };
-
+        // আপনার দেওয়া গিটহাবের প্রতিটা ক্যাটাগরির RAW ফাইলের লিংক
         const categoriesData = [
-            { id: "movies", name: "MOVIES HD" },
-            { id: "entertainment", name: "ENTERTAINMENT" },
-            { id: "sports", name: "SPORTS" },
-            { id: "kids", name: "KIDS" },
-            { id: "news", name: "NEWS" },
-            { id: "music", name: "MUSIC AND OTHERS" }
+            { id: "movies", name: "MOVIES HD", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/movieshd.m3u" },
+            { id: "entertainment", name: "ENTERTAINMENT", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/entertainment.m3u" },
+            { id: "sports", name: "SPORTS", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/sports.m3u" },
+            { id: "kids", name: "KIDS", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/kids.m3u" },
+            { id: "news", name: "NEWS", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/news.m3u" },
+            { id: "music", name: "MUSIC AND OTHERS", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/musicandother.m3u" },
+            { id: "bd_tv", name: "BD TV", url: "https://raw.githubusercontent.com/junaidthakur/PlayCast/main/bangladeshi.m3u" }
         ];
 
-        // মেইন স্ক্রিনে ক্যাটাগরি এবং পাশে ইনস্ট্যান্ট লাইভ চ্যানেল কাউন্ট দেখানো
+        let parsedData = {}; 
+
+        // অ্যাপ চালু হওয়ার সাথে সাথে গিটহাব থেকে ডাইনামিকালি ডাটা রিড করার ফাংশন
+        async function initApp() {
+            const container = document.getElementById('categoryContainer');
+            container.innerHTML = "<p style='padding:20px; color:#aaa; text-align:center;'>Loading channels from GitHub...</p>";
+
+            // গিটহাবের ব্লকিং এড়ানোর জন্য অল্টারনেটিভ ফ্রি প্রক্সি
+            const proxyUrl = "https://api.allorigins.win/raw?url=";
+
+            for (let cat of categoriesData) {
+                if (!cat.url) {
+                    parsedData[cat.id] = [];
+                    continue;
+                }
+                try {
+                    // প্রক্সি দিয়ে গিটহাবের raw ফাইলটি ফেচ করা হচ্ছে
+                    const response = await fetch(proxyUrl + encodeURIComponent(cat.url));
+                    if (response.ok) {
+                        const m3uText = await response.text();
+                        parsedData[cat.id] = parseM3U(m3uText);
+                    } else {
+                        parsedData[cat.id] = [];
+                    }
+                } catch (e) {
+                    console.log("Fetch error, trying backup fetch...", e);
+                    // প্রক্সি ছাড়া সাধারণ ব্যাকআপ চেষ্টা
+                    try {
+                        const resBackup = await fetch(cat.url);
+                        if(resBackup.ok) {
+                            const text = await resBackup.text();
+                            parsedData[cat.id] = parseM3U(text);
+                        } else { parsedData[cat.id] = []; }
+                    } catch(err) {
+                        parsedData[cat.id] = [];
+                    }
+                }
+            }
+            displayCategories();
+        }
+
+        // গিটহাব থেকে আসা .m3u ডাটা পার্স করার লজিক
+        function parseM3U(data) {
+            const lines = data.split('\n');
+            const channels = [];
+            for (let i = 0; i < lines.length; i++) {
+                let line = lines[i].trim();
+                if (line.startsWith('#EXTINF:')) {
+                    const nameParts = line.split(',');
+                    const channelName = nameParts[nameParts.length - 1].trim();
+                    const nextLine = lines[i + 1] ? lines[i + 1].trim() : "";
+                    if (nextLine && !nextLine.startsWith('#')) {
+                        channels.push({ name: channelName, url: nextLine });
+                    }
+                }
+            }
+            return channels;
+        }
+
+        // মেইন স্ক্রিনে ক্যাটাগরি এবং পাশে গিটহাব থেকে গোনা লাইভ চ্যানেল সংখ্যা দেখানো
         function displayCategories() {
             const container = document.getElementById('categoryContainer');
             container.innerHTML = "";
             
             categoriesData.forEach((cat, index) => {
-                const totalChannels = tvData[cat.id] ? tvData[cat.id].length : 0;
+                const totalChannels = parsedData[cat.id] ? parsedData[cat.id].length : 0;
                 
                 const catItem = document.createElement('button');
                 catItem.className = "category-item";
@@ -146,9 +166,9 @@
             const container = document.getElementById('channelContainer');
             container.innerHTML = "";
 
-            const channels = tvData[catId] || [];
+            const channels = parsedData[catId] || [];
             if (channels.length === 0) {
-                container.innerHTML = "<p style='padding:20px; color:#aaa; text-align:center;'>No channels available in this category.</p>";
+                container.innerHTML = "<p style='padding:20px; color:#aaa; text-align:center;'>No channels found in this GitHub file.</p>";
                 return;
             }
 
@@ -203,13 +223,13 @@
             setTimeout(() => {
                 if (screen.orientation && screen.orientation.lock) {
                     screen.orientation.lock('landscape').catch(function(error) {
-                        console.log("Orientation lock failed: ", error);
+                        console.log("Orientation lock setup: ", error);
                     });
                 }
             }, 200);
         }
 
-        // ফুল স্ক্রিন থেকে বের হলে রিমুভ ও রিসেট লজিক
+        // ফুল স্ক্রিন থেকে বের হলে রিসেট লজিক
         document.addEventListener('fullscreenchange', handleExitFullscreen);
         document.addEventListener('webkitfullscreenchange', handleExitFullscreen);
         document.addEventListener('mozfullscreenchange', handleExitFullscreen);
@@ -251,8 +271,8 @@
             }
         });
 
-        // অ্যাপ সরাসরি রান করা হলো
-        displayCategories();
+        // অ্যাপ চালু হওয়ামাত্র গিটহাব ফাইল রিড করবে
+        initApp();
     </script>
 </body>
 </html>
