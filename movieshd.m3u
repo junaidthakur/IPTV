@@ -1,0 +1,14 @@
+#EXTINF:-1 tvg-id="zee_cinema" tvg-name="Zee Cinema" tvg-logo="https://images.toffeelive.com/images/program/35349/logo/240x240/mobile_logo_609796001655891394.png" group-title="MOVIES HD", Zee Cinema
+https://mflixott.com/tv/toffee/live.php?id=zee_cinema&e=.m3u8
+
+#EXTINF:-1 tvg-id="sony_max" tvg-name="Sony Max" tvg-logo="https://images.toffeelive.com/images/program/35345/logo/240x240/mobile_logo_606405001655891176.png" group-title="MOVIES HD", Sony Max
+https://mflixott.com/tv/toffee/live.php?id=sony_max&e=.m3u8
+
+#EXTINF:-1 tvg-id="star_gold" tvg-name="Star Gold" tvg-logo="https://images.toffeelive.com/images/program/35347/logo/240x240/mobile_logo_489437001655891350.png" group-title="MOVIES HD", Star Gold
+https://mflixott.com/tv/toffee/live.php?id=star_gold&e=.m3u8
+
+#EXTINF:-1 tvg-id="colors_cineplex" tvg-name="Colors Cineplex" tvg-logo="https://images.toffeelive.com/images/program/35350/logo/240x240/mobile_logo_940381001655891461.png" group-title="MOVIES HD", Colors Cineplex
+https://mflixott.com/tv/toffee/live.php?id=colors_cineplex&e=.m3u8
+
+#EXTINF:-1 tvg-id="jalsha_movies" tvg-name="Jalsha Movies" tvg-logo="https://images.toffeelive.com/images/program/35344/logo/240x240/mobile_logo_290124001655891147.png" group-title="MOVIES HD", Jalsha Movies
+https://mflixott.com/tv/toffee/live.php?id=jalsha_movies&e=.m3u8
