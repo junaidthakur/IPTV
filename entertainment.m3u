@@ -18,12 +18,6 @@ https://mflixott.com/tv/toffee/live.php?id=hum_sitaray&e=.m3u8
 #EXTINF:-1 tvg-id="sonyentertainmnt_hd" tvg-name="SONY ENTERTAINMENT TELEVISION HD" tvg-country="IN" tvg-logo="https://images.toffeelive.com/images/program/602/logo/240x240/mobile_logo_495351001666780441.png" tvg-chno="sonyentertainmnt_hd" group-title="Entertainment", SONY ENTERTAINMENT TELEVISION HD 
 https://mflixott.com/tv/toffee/live.php?id=sonyentertainmnt_hd&e=.m3u8
 
-#EXTINF:-1 tvg-id="sony_entertainment" tvg-name="SONY ENTERTAINMENT TELEVISION" tvg-country="IN" tvg-logo="https://images.toffeelive.com/images/program/57/logo/240x240/mobile_logo_149299001666780350.png" tvg-chno="sony_entertainment" group-title="Entertainment", SONY ENTERTAINMENT TELEVISION
-https://mflixott.com/tv/toffee/live.php?id=sony_entertainment&e=.m3u8
-
-#EXTINF:-1 tvg-id="sonysab_hd" tvg-name="SONY SAB HD VIP" tvg-country="IN" tvg-logo="https://images.toffeelive.com/images/program/2420/logo/240x240/mobile_logo_688156001666785674.png" tvg-chno="sonysab_hd" group-title="Entertainment", SONY SAB HD
-https://mflixott.com/tv/toffee/live.php?id=sonysab_hd&e=.m3u8
-
 #EXTINF:-1 tvg-id="sony_max_hd" tvg-name="SONY MAX HD VIP" tvg-country="IN" tvg-logo="https://images.toffeelive.com/images/program/641/logo/240x240/mobile_logo_440775001666782769.png" tvg-chno="sony_max_hd" group-title="Entertainment", SONY MAX HD
 https://mflixott.com/tv/toffee/live.php?id=sony_max_hd&e=.m3u8
 
@@ -81,47 +75,17 @@ https://byphdgllyk.gpcdn.net/hls/deeptotv/0_1/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-country="IN" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/01/Enterr10_Bangla.jpg" tvg-chno="" group-title="Entertainment", Enterr10 Bangla
 https://live-bangla.akamaized.net/liveabr/pub-iobanglakp3sff/live_360p/chunks.m3u8
 
-#EXTINF:-1 tvg-id="star_jalsha" tvg-name="Star Jalsha" tvg-country="IN" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/ef/Star_Jalsha_logo_2023.png" tvg-chno="star_jalsha" group-title="Entertainment", Star Jalsha
-https://mflixott.com/tv/plusbox/live/StarJalshaHD/index.m3u8
-
-#EXTINF:-1 tvg-id="star_jalsha" tvg-name="Star Jalsha" tvg-country="IN" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/ef/Star_Jalsha_logo_2023.png" tvg-chno="star_jalsha" group-title="Entertainment", Star Jalsha HD
-https://mflixott.com/tv/plusbox/live/StarJalshaHD/index.m3u8
-
 #EXTINF:-1 tvg-id="star_jalsha" tvg-name="Jalsha Movies" tvg-country="IN" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/61/Jalsha_Movies.png" tvg-chno="star_jalsha" group-title="Entertainment", Jalsha Movies
 https://live.dinesh29.com.np/stream/jiotvplus/jalshamovies/master.m3u8
 
 #EXTINF:-1 tvg-id="star_jalsha" tvg-name="Jalsha Movies HD" tvg-country="IN" tvg-logo="https://live.dinesh29.com.np/logos/jiotvplus/jalshamovieshd.png" tvg-chno="star_jalsha" group-title="Entertainment", Jalsha Movies HD
 https://live.dinesh29.com.np/stream/jiotvplus/jalshamovieshd/master.m3u8
 
-#EXTINF:-1 tvg-id="star_jalsha" tvg-name="Star Plus" tvg-country="IN" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d7/StarPlus_Logo.png" tvg-chno="star_jalsha" group-title="Entertainment", Star Plus
-https://tvsen7.aynaott.com/sphdbd/index.m3u8
-
-#EXTINF:-1 tvg-id="star_jalsha" tvg-name="Star Plus HD" tvg-country="IN" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d7/StarPlus_Logo.png" tvg-chno="star_jalsha" group-title="Entertainment", Star Plus HD
-https://tvsen7.aynaott.com/sphdbd/index.m3u8
-
 #EXTINF:-1 tvg-id="star_jalsha" tvg-name="Star Bharat" tvg-country="IN" tvg-logo="https://live.dinesh29.com.np/logos/jiotvplus/starbharat.png" tvg-chno="star_jalsha" group-title="Entertainment", Star Bharat
 https://live.dinesh29.com.np/stream/jiotvplus/starbharat/master.m3u8
 
 #EXTINF:-1 tvg-id="star_jalsha" tvg-name="Star Bharat HD" tvg-country="IN" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b9/Star_bharat_hd_clean.png" tvg-chno="star_jalsha" group-title="Entertainment", Star Bharat HD
 https://live.dinesh29.com.np/stream/jiotvplus/starbharathd/master.m3u8
-
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Colors_SD.png" group-title="Entertainment",Colors
-https://live.dinesh29.com.np/stream/jiotv/colorssd/master.m3u8
-
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Colors_SD.png" group-title="Entertainment",Colors HD
-https://live.dinesh29.com.np/stream/jiotv/colorshd/master.m3u8
-
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/7b/Colors_Bangla.png" group-title="Entertainment",Colors Bangla
-https://live.dinesh29.com.np/stream/jiotv/colorsbanglasd/master.m3u8
-
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="https://static.wikia.nocookie.net/etv-gspn-bangla/images/0/08/Colors_Bangla_HD_logo_%282016-alt%29.png" group-title="Entertainment",Colors Bangla HD
-https://live.dinesh29.com.np/stream/jiotv/colorsbengalihd/master.m3u8
-
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="https://static.wikia.nocookie.net/etv-gspn-bangla/images/0/06/Colors_Bangla_Cinema_logo_%282023-2024%29.png" group-title="Entertainment",Colors Bangla Cinema
-https://live.dinesh29.com.np/stream/jiotv/colorsbanglacinema/master.m3u8
-
-#EXTINF:-1 tvg-id="zee_bangla" tvg-name="Zee Bangla VIP" tvg-country="IN" tvg-logo="https://images.toffeelive.com/images/program/340/logo/240x240/mobile_logo_094417001655891123.png" tvg-chno="zee_bangla" group-title="Entertainment", Zee Bangla HD
-https://mflixott.com/tv/plusbox/live/ZeeBanglaHD/index.m3u8
 
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="https://upload.wikimedia.org/wikipedia/en/b/b3/Sun_Bangla.png" group-title="Entertainment",Sun Bangla
 https://live.dinesh29.com.np/stream/jiotv/sunbangla/master.m3u8
@@ -131,9 +95,6 @@ https://cdn-4.pishow.tv/live/1039/master.m3u8
 
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="https://pbs.twimg.com/media/GsKaFVeWsAAJbgi?format=jpg&name=large" group-title="Entertainment",Sangeet Bangla
 https://cdn-4.pishow.tv/live/1143/master.m3u8
-
-#EXTINF:-1 tvg-id="Music" tvg-name="9XM" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/81/9xm_red.svg" group-title="Entertainment",9XM
-https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e8376bd8417a1b6761138aa41c26c7309312/9xm/a731c680-6a62-4174-bc98-186fe654724a/0.m3u8
 
 #EXTINF:-1 tvg-id="Entertainment" tvg-name="Geo TV" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Geo TV
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/geotv.stream/playlist.m3u8
@@ -150,9 +111,6 @@ https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF9
 #EXTINF:-1 tvg-id="Entertainment" tvg-name="Global Fashion Channel" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Global Fashion Channel
 https://pubgfc.teleosmedia.com/linear/globalfashionchannel/globalfashionchannel/playlist.m3u8
 
-#EXTINF:-1 tvg-id="Entertainment" tvg-name="Bangla 21 TV" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Bangla 21 TV
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/bangla21tv000889956-sg.stream/playlist.m3u8
-
 #EXTINF:-1 tvg-id="Entertainment" tvg-name="Movie Action" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Movie Action
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/movieaction.stream/playlist.m3u8
 
@@ -162,41 +120,17 @@ https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF9
 #EXTINF:-1 tvg-id="Entertainment" tvg-name="Bollywood Movie" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Bollywood Movie
 https://amg00864-shemarooenterta-shemabollywood-ono-nlwbw.amagi.tv/playlist/amg00864-shemarooenterta-shemabollywood-ono/playlist.m3u8
 
-#EXTINF:-1 tvg-id="Entertainment" tvg-name="Lotus Macau" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Lotus Macau
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/lotusmacautv.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="Entertainment" tvg-name="The Movie Club" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",The Movie Club
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/bo2.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="Entertainment" tvg-name="B24C" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",B24C
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/b24c.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="Entertainment" tvg-name="Masala Entertainment Plus tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Masala Entertainment Plus
-https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/masala-entertainment-plus/master.m3u8
-
-#EXTINF:-1 tvg-id="Entertainment" tvg-name="Channel A1" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Channel A1
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/cha1.stream/playlist.m3u8
-
 #EXTINF:-1 tvg-id="Entertainment" tvg-name="Aur Life HD" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Aur Life HD
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/aurtvpk.stream/playlist.m3u8
 
 #EXTINF:-1 tvg-id="Entertainment" tvg-name="Sananda TV" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Sananda TV
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/sanandatv.stream/playlist.m3u8
 
-#EXTINF:-1 tvg-id="Entertainment" tvg-name="Dim TV" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Dim TV
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/dimtv.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="Entertainment" tvg-name="Tara TV" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Tara TV
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/tara.stream/playlist.m3u8
-
 #EXTINF:-1 tvg-id="Entertainment" tvg-name="Matribhumi TV" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Matribhumi TV
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/matribhumitv.stream/playlist.m3u8
 
 #EXTINF:-1 tvg-id="Entertainment" tvg-name="Alpona TV" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Alpona TV
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/alponatv.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="Entertainment" tvg-name="BA TV" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",BA TV
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/batvuk.stream/playlist.m3u8
 
 #EXTINF:-1 tvg-id="Entertainment" tvg-name="TV One" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",TV One
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/tvonepk.stream/playlist.m3u8
@@ -207,18 +141,6 @@ https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF9
 #EXTINF:-1 tvg-id="Entertainment" tvg-name="See TV" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",See TV
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/seetv.stream/playlist.m3u8
 
-#EXTINF:-1 tvg-id="Entertainment" tvg-name="Urdu 1" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Urdu 1
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/urdu1.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="Entertainment" tvg-name="Eye TV Bangla" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Eye TV Bangla
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/eyetv.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="Entertainment" tvg-name="Movie Plus" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Entertainment",Movie Plus
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/movieplus.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="Music" tvg-name="Birit Asia TV" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",Birit Asia TV
-https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e8376bd8417a1b6761138aa41c26c7309312/britasiatv/ad785215-9b76-421c-b7c9-ec8c7670ceff/0.m3u8
-
 #EXTINF:-1 tvg-id="Music" tvg-name="Trace Urban" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",Trace Urban
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/traceurban.stream/playlist.m3u8
 
@@ -228,44 +150,20 @@ https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF9
 #EXTINF:-1 tvg-id="Music" tvg-name="Joo Music" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",Joo Music
 https://livecdn.live247stream.com/joomusic/tv/playlist.m3u8
 
-#EXTINF:-1 tvg-id="Music" tvg-name="9XM" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",9XM
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/9xmin.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="Music" tvg-name="ATN Music" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",ATN Music
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/atnmusic.stream/playlist.m3u8
-
 #EXTINF:-1 tvg-id="Music" tvg-name="Balle Balle" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",Balle Balle
 https://mcncdndigital.com/balleballetv/tracks-v1a1/mono.m3u8
 
 #EXTINF:-1 tvg-id="Music" tvg-name="Saga Music" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",Saga Music
 https://mcncdndigital.com/balleballetv/tracks-v1a1/mono.m3u8
 
-#EXTINF:-1 tvg-id="Music" tvg-name="Masti" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",Masti
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/mastiiiin.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="Music" tvg-name="91NRG" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",91NRG
-https://5c389faa13be3.streamlock.net/onweb/live/chunklist_w282239334.m3u8
-
-#EXTINF:-1 tvg-id="Music" tvg-name="E24" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",E24
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/e24in.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="Music" tvg-name="9x Jalwa" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",9x Jalwa
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/9xjalwain.stream/playlist.m3u8
-
 #EXTINF:-1 tvg-id="Music" tvg-name="Zoom" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",Zoom
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/zoomin.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="Music" tvg-name="Music India" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",Music India
-https://tvsen6.aynaott.com/MusicIndia/index.m3u8
 
 #EXTINF:-1 tvg-id="Music" tvg-name="Burno TV" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",Burno TV
 https://stream1.xdevel.com/video0s975758-1047/stream/chunks.m3u8
 
 #EXTINF:-1 tvg-id="Music" tvg-name="Colosal TV" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",Colosal TV
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/colosal.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="Music" tvg-name="ShowBox" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",ShowBox
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/showboxin.stream/playlist.m3u8
 
 #EXTINF:-1 tvg-id="Music" tvg-name="8XM" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",8XM
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/8xmpk.stream/playlist.m3u8
@@ -275,27 +173,3 @@ https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF9
 
 #EXTINF:-1 tvg-id="Music" tvg-name="Music Bangla TV" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",Music Bangla TV
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/musicbangla2025.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="Music" tvg-name="Channel 5" tvg-logo="https://i.postimg.cc/pdDTZFjr/image.png" group-title="Music",Channel 5
-https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/musicbangla.stream/playlist.m3u8
-
-#EXTINF:-1 tvg-id="zee_bangla" tvg-name="Zee Bangla VIP" tvg-logo="https://images.toffeelive.com/images/program/340/logo/240x240/mobile_logo_094417001655891123.png" group-title="ENTERTAINMENT", Zee Bangla
-https://mflixott.com/tv/toffee/live.php?id=zee_bangla&e=.m3u8
-
-#EXTINF:-1 tvg-id="star_jalsha" tvg-name="Star Jalsha" tvg-logo="https://images.toffeelive.com/images/program/336/logo/240x240/mobile_logo_913840001655890983.png" group-title="ENTERTAINMENT", Star Jalsha
-https://mflixott.com/tv/toffee/live.php?id=star_jalsha&e=.m3u8
-
-#EXTINF:-1 tvg-id="sony_atv" tvg-name="Sony Aath" tvg-logo="https://images.toffeelive.com/images/program/338/logo/240x240/mobile_logo_811654001655891077.png" group-title="ENTERTAINMENT", Sony Aath
-https://mflixott.com/tv/toffee/live.php?id=sony_atv&e=.m3u8
-
-#EXTINF:-1 tvg-id="colors_bangla" tvg-name="Colors Bangla" tvg-logo="https://images.toffeelive.com/images/program/339/logo/240x240/mobile_logo_436154001655891100.png" group-title="ENTERTAINMENT", Colors Bangla
-https://mflixott.com/tv/toffee/live.php?id=colors_bangla&e=.m3u8
-
-#EXTINF:-1 tvg-id="star_plus" tvg-name="Star Plus" tvg-logo="https://images.toffeelive.com/images/program/35341/logo/240x240/mobile_logo_053155001655890786.png" group-title="ENTERTAINMENT", Star Plus
-https://mflixott.com/tv/toffee/live.php?id=star_plus&e=.m3u8
-
-#EXTINF:-1 tvg-id="sony_sab" tvg-name="Sony Sab" tvg-logo="https://images.toffeelive.com/images/program/35342/logo/240x240/mobile_logo_609477001655890833.png" group-title="ENTERTAINMENT", Sony Sab
-https://mflixott.com/tv/toffee/live.php?id=sony_sab&e=.m3u8
-
-#EXTINF:-1 tvg-id="sony_tv" tvg-name="Sony Entertainment" tvg-logo="https://images.toffeelive.com/images/program/35340/logo/240x240/mobile_logo_560124001655890714.png" group-title="ENTERTAINMENT", Sony TV
-https://mflixott.com/tv/toffee/live.php?id=sony_tv&e=.m3u8
