@@ -62,7 +62,7 @@
     </div>
 
     <script>
-        // আপনার দেওয়া গিটহাবের প্রতিটা ক্যাটাগরির RAW ফাইলের লিংক (BD TV সহ)
+        // আপনার দেওয়া গিটহাবের প্রতিটা ক্যাটাগরির RAW ফাইলের লিংক
         const categoriesData = [
             { id: "bd_tv", name: "BD TV", url: "https://raw.githubusercontent.com/junaidthakur/PlayCast/main/bangladeshi.m3u" },
             { id: "movies", name: "MOVIES HD", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/movieshd.m3u" },
@@ -75,13 +75,10 @@
 
         let parsedData = {}; 
 
-        // অ্যাপ চালু হওয়ার সাথে সাথে গিটহাব থেকে ডাইনামিকালি ডাটা রিড করার ফাংশন
+        // প্রক্সি ছাড়া সরাসরি গিটহাব থেকে অতি দ্রুত ডাটা ফেচ করার ফাংশন
         async function initApp() {
             const container = document.getElementById('categoryContainer');
             container.innerHTML = "<p style='padding:20px; color:#aaa; text-align:center;'>Loading channels from GitHub...</p>";
-
-            // গিটহাবের ব্লকিং এড়ানোর জন্য অল্টারনেティブ ফ্রি প্রক্সি
-            const proxyUrl = "https://api.allorigins.win/raw?url=";
 
             for (let cat of categoriesData) {
                 if (!cat.url) {
@@ -89,7 +86,8 @@
                     continue;
                 }
                 try {
-                    const response = await fetch(proxyUrl + encodeURIComponent(cat.url));
+                    // কোনো প্রক্সি ছাড়াই সরাসরি গিটহাবের র-লিংক কল করা হচ্ছে
+                    const response = await fetch(cat.url);
                     if (response.ok) {
                         const m3uText = await response.text();
                         parsedData[cat.id] = parseM3U(m3uText);
@@ -97,21 +95,14 @@
                         parsedData[cat.id] = [];
                     }
                 } catch (e) {
-                    try {
-                        const resBackup = await fetch(cat.url);
-                        if(resBackup.ok) {
-                            const text = await resBackup.text();
-                            parsedData[cat.id] = parseM3U(text);
-                        } else { parsedData[cat.id] = []; }
-                    } catch(err) {
-                        parsedData[cat.id] = [];
-                    }
+                    console.log("Error loading " + cat.name, e);
+                    parsedData[cat.id] = [];
                 }
             }
             displayCategories();
         }
 
-        // উন্নত .m3u ফাইল পার্সার (যা BD TV ফাইলের ফাঁকা লাইনের সমস্যা ফিক্স করবে)
+        // শক্তিশালী .m3u ফাইল পার্সার (ফাঁকা লাইন এবং বিডি টিভি দুটোই হ্যান্ডেল করবে)
         function parseM3U(data) {
             const lines = data.split('\n');
             const channels = [];
@@ -204,7 +195,7 @@
             displayCategories();
         }
 
-        // 🎬 ল্যান্ডস্কেপ মোডে আল্ট্রา ফুল স্ক্রিন প্লে করার লজিক
+        // 🎬 ল্যান্ডস্কেপ মোডে আল্ট্রা ফুল স্ক্রিন প্লে করার লজিক
         function playLive(url) {
             const wrapper = document.getElementById('playerWrapper');
             const video = document.getElementById('videoPlayer');
