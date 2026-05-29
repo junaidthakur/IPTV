@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live TV IPTV</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        /* আপনার স্ক্রিনশটের মতো প্রিমিয়াম ডার্ক থিম UI */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #000; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; padding: 15px; }
+        
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 15px 10px; font-size: 22px; font-weight: bold; border-bottom: 1px solid #222; }
+        
+        .category-list, .channel-list { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
+        
+        .category-item, .channel-item {
+            background-color: #1a1a1a; border: 2px solid transparent; padding: 18px 15px; border-radius: 8px;
+            display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-decoration: none; color: white; font-size: 16px; font-weight: 600; transition: 0.2s;
+        }
+        
+        /* রিমোট বা টাচ ফোকাস হাইলাইট */
+        .category-item:focus, .channel-item:focus { border-color: #ffffff; background-color: #333; outline: none; }
+        
+        /* লাল রঙের কাউন্ট ব্যাজ */
+        .count-badge { background-color: #e50914; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 14px; font-weight: bold; margin-right: 10px; }
+        .arrow { color: #888; font-weight: bold; margin-left: 5px; }
+        .right-side { display: flex; align-items: center; }
+
+        .back-btn { background: #222; color: #fff; border: none; padding: 12px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 15px; display: none; width: 100%; text-align: left; font-size: 16px; }
+        .back-btn:focus { background: #fff; color: #000; outline: none; }
+
+        /* 📺 ভিডিও প্লেয়ার কন্টেইনার (ল্যান্ডস্কেপ ফিক্স করার জন্য) */
+        .video-wrapper {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: #000;
+            z-index: 99999;
+        }
+
+        video { 
+            width: 100% !important; 
+            height: 100% !important; 
+            object-fit: cover !important; /* কালো দাগ দূর করার জন্য */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header" id="nav-header">☰ Live TV</div>
+    
+    <button class="back-btn" id="backBtn" onclick="showCategories()">← Back to Categories</button>
+
+    <div class="category-list" id="categoryContainer"></div>
+
+    <div class="channel-list" id="channelContainer" style="display: none;"></div>
+
+    <div id="playerWrapper" class="video-wrapper">
+        <video id="videoPlayer" controls playsinline></video>
+    </div>
+
+    <script>
+        const categoriesData = [
+            { id: "recent", name: "Recent Watch", url: "YOUR_RAW_LINK_HERE" },
+            { id: "all", name: "ALL CHANNELS", url: "YOUR_RAW_LINK_HERE" },
+            { id: "movies", name: "MOVIES HD", url: "YOUR_RAW_LINK_HERE" },
+            { id: "entertainment", name: "ENTERTAINMENT", url: "YOUR_RAW_LINK_HERE" },
+            { id: "kids", name: "KIDS", url: "YOUR_RAW_LINK_HERE" },
+            { id: "music", name: "MUSIC", url: "YOUR_RAW_LINK_HERE" },
+            { id: "news", name: "NEWS", url: "YOUR_RAW_LINK_HERE" },
+            { id: "bd_tv", name: "BD TV", url: "https://raw.githubusercontent.com/junaidthakur/PlayCast/main/bangladeshi.m3u" },
+            { id: "sports", name: "SPORTS", url: "YOUR_RAW_LINK_HERE" }
+        ];
+
+        let parsedData = {}; 
+
+        async function initApp() {
+            const container = document.getElementById('categoryContainer');
+            container.innerHTML = "<p style='padding:20px; color:#aaa; text-align:center;'>Loading app data...</p>";
+
+            for (let cat of categoriesData) {
+                if (cat.url === "YOUR_RAW_LINK_HERE" || !cat.url) {
+                    parsedData[cat.id] = [];
+                    continue;
+                }
+                try {
+                    const response = await fetch(cat.url);
+                    if (response.ok) {
+                        const m3uText = await response.text();
+                        parsedData[cat.id] = parseM3U(m3uText);
+                    } else {
+                        parsedData[cat.id] = [];
+                    }
+                } catch (e) {
+                    parsedData[cat.id] = [];
+                }
+            }
+            displayCategories();
+        }
+
+        function parseM3U(data) {
+            const lines = data.split('\n');
+            const channels = [];
+            for (let i = 0; i < lines.length; i++) {
+                let line = lines[i].trim();
+                if (line.startsWith('#EXTINF:')) {
+                    const nameParts = line.split(',');
+                    const channelName = nameParts[nameParts.length - 1].trim();
+                    const nextLine = lines[i + 1] ? lines[i + 1].trim() : "";
+                    if (nextLine && !nextLine.startsWith('#')) {
+                        channels.push({ name: channelName, url: nextLine });
+                    }
+                }
+            }
+            return channels;
+        }
+
+        function displayCategories() {
+            const container = document.getElementById('categoryContainer');
+            container.innerHTML = "";
+            
+            categoriesData.forEach((cat, index) => {
+                const totalChannels = parsedData[cat.id] ? parsedData[cat.id].length : 0;
+                
+                const catItem = document.createElement('button');
+                catItem.className = "category-item";
+                if(index === 0) catItem.setAttribute('autofocus', 'true'); 
+                
+                catItem.innerHTML = `
+                    <span>${cat.name}</span>
+                    <div class="right-side">
+                        <span class="count-badge">${totalChannels}</span>
+                        <span class="arrow">&gt;</span>
+                    </div>
+                `;
+                catItem.onclick = () => showChannels(cat.id, cat.name);
+                container.appendChild(catItem);
+            });
+        }
+
+        function showChannels(catId, catName) {
+            document.getElementById('categoryContainer').style.display = 'none';
+            document.getElementById('channelContainer').style.display = 'flex';
+            document.getElementById('backBtn').style.display = 'block';
+            document.getElementById('nav-header').innerText = `☰ ${catName}`;
+
+            const container = document.getElementById('channelContainer');
+            container.innerHTML = "";
+
+            const channels = parsedData[catId] || [];
+            if (channels.length === 0) {
+                container.innerHTML = "<p style='padding:20px; color:#aaa; text-align:center;'>No channels available or link not updated.</p>";
+                return;
+            }
+
+            channels.forEach((channel, index) => {
+                const chItem = document.createElement('button');
+                chItem.className = "channel-item";
+                if(index === 0) chItem.focus(); 
+                
+                chItem.innerHTML = `<span>${channel.name}</span> <span class="arrow">&gt;</span>`;
+                chItem.onclick = () => playLive(channel.url);
+                container.appendChild(chItem);
+            });
+        }
+
+        function showCategories() {
+            document.getElementById('categoryContainer').style.display = 'flex';
+            document.getElementById('channelContainer').style.display = 'none';
+            document.getElementById('backBtn').style.display = 'none';
+            document.getElementById('nav-header').innerText = "☰ Live TV";
+            displayCategories();
+        }
+
+        // 🎬 ল্যান্ডস্কেপ মোডে জোরপূর্বক ফুল স্ক্রিন করার জন্য নতুন লজিক
+        function playLive(url) {
+            const wrapper = document.getElementById('playerWrapper');
+            const video = document.getElementById('videoPlayer');
+            
+            wrapper.style.display = 'block';
+            
+            if (Hls.isSupported()) {
+                const hls = new Hls();
+                hls.loadSource(url);
+                hls.attachMedia(video);
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = url;
+            }
+
+            video.play();
+
+            // 🛠️ ভিডিও ট্যাগের বদলে পুরো ভিডিও কন্টেইনারকে ফুলস্ক্রিন করা হচ্ছে
+            if (wrapper.requestFullscreen) {
+                wrapper.requestFullscreen();
+            } else if (wrapper.webkitRequestFullscreen) {
+                wrapper.webkitRequestFullscreen();
+            } else if (wrapper.mozRequestFullScreen) {
+                wrapper.mozRequestFullScreen();
+            } else if (wrapper.msRequestFullscreen) {
+                wrapper.msRequestFullscreen();
+            }
+
+            // 🔄 ফুলস্ক্রিন হওয়ার পর স্ক্রিনকে ল্যান্ডস্কেপ মোডে লক করা
+            setTimeout(() => {
+                if (screen.orientation && screen.orientation.lock) {
+                    screen.orientation.lock('landscape').catch(function(error) {
+                        console.log("Orientation lock failed: ", error);
+                    });
+                }
+            }, 200); // ব্রাউজারকে ফুলস্ক্রিন প্রসেস করার জন্য সামান্য একটু সময় দেওয়া হয়েছে
+        }
+
+        // ফুল স্ক্রিন বন্ধ বা ব্যাক করলে আবার নরমাল করা হবে
+        document.addEventListener('fullscreenchange', handleExitFullscreen);
+        document.addEventListener('webkitfullscreenchange', handleExitFullscreen);
+        document.addEventListener('mozfullscreenchange', handleExitFullscreen);
+        document.addEventListener('MSFullscreenChange', handleExitFullscreen);
+
+        function handleExitFullscreen() {
+            const wrapper = document.getElementById('playerWrapper');
+            const video = document.getElementById('videoPlayer');
+            
+            if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.mozFullScreenElement && !document.msFullscreenElement) {
+                video.pause();
+                video.src = ""; 
+                wrapper.style.display = 'none';
+                
+                // ওরিয়েন্টেশন আনলক করে নরমাল করা হচ্ছে
+                if (screen.orientation && screen.orientation.unlock) {
+                    screen.orientation.unlock();
+                }
+            }
+        }
+
+        // টিভি রিমোট সাপোর্ট
+        document.addEventListener('keydown', function(event) {
+            const active = document.activeElement;
+            if (!active) return;
+
+            if (event.key === 'ArrowDown') {
+                const next = active.nextElementSibling;
+                if (next && next.tagName === 'BUTTON') next.focus();
+            } else if (event.key === 'ArrowUp') {
+                const prev = active.previousElementSibling;
+                if (prev && prev.tagName === 'BUTTON') prev.focus();
+            } else if (event.key === 'Enter') {
+                active.click();
+            } else if (event.key === 'Backspace' || event.key === 'Escape') {
+                if (document.getElementById('channelContainer').style.display === 'flex') {
+                    showCategories();
+                    event.preventDefault();
+                }
+            }
+        });
+
+        initApp();
+    </script>
+</body>
+</html>
