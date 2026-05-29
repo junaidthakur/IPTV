@@ -30,7 +30,7 @@
         .back-btn { background: #222; color: #fff; border: none; padding: 12px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 15px; display: none; width: 100%; text-align: left; font-size: 16px; }
         .back-btn:focus { background: #fff; color: #000; outline: none; }
 
-        /* 📺 ভিডিও প্লেয়ার কন্টেইনার (ল্যান্ডস্কেপ ফিক্স করার জন্য) */
+        /* 📺 ভিডিও প্লেয়ার কন্টেইনার */
         .video-wrapper {
             display: none;
             position: fixed;
@@ -43,7 +43,47 @@
         video { 
             width: 100% !important; 
             height: 100% !important; 
-            object-fit: cover !important; /* কালো বর্ডার বা দাগ দূর করার জন্য */
+            object-fit: cover !important; 
+        }
+
+        /* ⏳ আধুনিক স্পিনার এবং লোডিং স্ক্রিন */
+        .loading-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #1a1a1a;
+            border-top: 5px solid #e50914; /* Netflix Red theme color */
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .loading-text {
+            color: #aaa;
+            font-size: 16px;
+            letter-spacing: 1px;
+            font-weight: 500;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        /* অ্যানিমেশন ইফেক্টস */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
         }
     </style>
 </head>
@@ -62,7 +102,6 @@
     </div>
 
     <script>
-        // আপনার দেওয়া গিটহাবের প্রতিটা ক্যাটাগরির RAW ফাইলের লিংক
         const categoriesData = [
             { id: "bd_tv", name: "BD TV", url: "https://raw.githubusercontent.com/junaidthakur/PlayCast/main/bangladeshi.m3u" },
             { id: "movies", name: "MOVIES HD", url: "https://raw.githubusercontent.com/junaidthakur/IPTV/refs/heads/main/movieshd.m3u" },
@@ -75,10 +114,16 @@
 
         let parsedData = {}; 
 
-        // প্রক্সি ছাড়া সরাসরি গিটহাব থেকে অতি দ্রুত ডাটা ফেচ করার ফাংশন
         async function initApp() {
             const container = document.getElementById('categoryContainer');
-            container.innerHTML = "<p style='padding:20px; color:#aaa; text-align:center;'>Loading channels from GitHub...</p>";
+            
+            // নতুন কাস্টম লোডিং স্ক্রিন সেট করা হলো
+            container.innerHTML = `
+                <div class="loading-box">
+                    <div class="spinner"></div>
+                    <div class="loading-text">Loading Channels...</div>
+                </div>
+            `;
 
             for (let cat of categoriesData) {
                 if (!cat.url) {
@@ -86,7 +131,6 @@
                     continue;
                 }
                 try {
-                    // কোনো প্রক্সি ছাড়াই সরাসরি গিটহাবের র-লিংক কল করা হচ্ছে
                     const response = await fetch(cat.url);
                     if (response.ok) {
                         const m3uText = await response.text();
@@ -102,7 +146,6 @@
             displayCategories();
         }
 
-        // শক্তিশালী .m3u ফাইল পার্সার (ফাঁকা লাইন এবং বিডি টিভি দুটোই হ্যান্ডেল করবে)
         function parseM3U(data) {
             const lines = data.split('\n');
             const channels = [];
@@ -114,7 +157,6 @@
                     const nameParts = line.split(',');
                     const channelName = nameParts[nameParts.length - 1].trim();
                     
-                    // পরবর্তী লাইনগুলোর মধ্য থেকে ফাঁকা লাইন বাদ দিয়ে আসল লিংকের লাইনটি খুঁজে বের করার লজিক
                     let nextLine = "";
                     let j = i + 1;
                     while (j < lines.length) {
@@ -136,7 +178,6 @@
             return channels;
         }
 
-        // মেইন স্ক্রিনে ক্যাটাগরি এবং পাশে গিটহাব থেকে গোনা লাইভ চ্যানেল সংখ্যা দেখানো
         function displayCategories() {
             const container = document.getElementById('categoryContainer');
             container.innerHTML = "";
@@ -160,7 +201,6 @@
             });
         }
 
-        // ক্যাটাগরির ভেতরে চ্যানেলের লিস্ট দেখানো
         function showChannels(catId, catName) {
             document.getElementById('categoryContainer').style.display = 'none';
             document.getElementById('channelContainer').style.display = 'flex';
@@ -195,7 +235,6 @@
             displayCategories();
         }
 
-        // 🎬 ল্যান্ডস্কেপ মোডে আল্ট্রা ফুল স্ক্রিন প্লে করার লজিক
         function playLive(url) {
             const wrapper = document.getElementById('playerWrapper');
             const video = document.getElementById('videoPlayer');
@@ -212,7 +251,6 @@
 
             video.play();
 
-            // পুরো কন্টেইনারকে ফুলস্ক্রিন করা হচ্ছে
             if (wrapper.requestFullscreen) {
                 wrapper.requestFullscreen();
             } else if (wrapper.webkitRequestFullscreen) {
@@ -220,10 +258,9 @@
             } else if (wrapper.mozRequestFullScreen) {
                 wrapper.mozRequestFullScreen();
             } else if (wrapper.msRequestFullscreen) {
-                wrapper.msRequestFullscreen();
+                wrapper.ms1RequestFullscreen();
             }
 
-            // 🔄 স্ক্রিনকে ল্যান্ডস্কেপ মোডে লক করা (মোবাইলের অটো রোটেট অন রাখতে হবে)
             setTimeout(() => {
                 if (screen.orientation && screen.orientation.lock) {
                     screen.orientation.lock('landscape').catch(function(error) {
@@ -233,7 +270,6 @@
             }, 200);
         }
 
-        // ফুল স্ক্রিন থেকে বের হলে রিসেট লজিক
         document.addEventListener('fullscreenchange', handleExitFullscreen);
         document.addEventListener('webkitfullscreenchange', handleExitFullscreen);
         document.addEventListener('mozfullscreenchange', handleExitFullscreen);
@@ -254,7 +290,6 @@
             }
         }
 
-        // টিভি রিমোট সাপোর্ট
         document.addEventListener('keydown', function(event) {
             const active = document.activeElement;
             if (!active) return;
@@ -275,7 +310,6 @@
             }
         });
 
-        // অ্যাপ চালু হওয়ামাত্র গিটহাব ফাইলটি রিড করবে
         initApp();
     </script>
 </body>
