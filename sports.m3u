@@ -1,0 +1,20 @@
+#EXTINF:-1 tvg-id="tsports_live" tvg-name="Tsports Live" tvg-logo="https://www.jagobd.com/wp-content/uploads/2019/12/t-sports.jpg" group-title="SPORTS", T sports
+https://tvsen7.aynaott.com/tsports-hd/tracks-v1a1/mono.ts.m3u8
+
+#EXTINF:-1 tvg-id="sony_ten_1" tvg-name="Sony Ten 1" tvg-logo="https://images.toffeelive.com/images/program/35352/logo/240x240/mobile_logo_464977001655891546.png" group-title="SPORTS", Sony Ten 1
+https://mflixott.com/tv/toffee/live.php?id=sony_ten_1&e=.m3u8
+
+#EXTINF:-1 tvg-id="sony_ten_2" tvg-name="Sony Ten 2" tvg-logo="https://images.toffeelive.com/images/program/35353/logo/240x240/mobile_logo_630652001655891572.png" group-title="SPORTS", Sony Ten 2
+https://mflixott.com/tv/toffee/live.php?id=sony_ten_2&e=.m3u8
+
+#EXTINF:-1 tvg-id="sony_six" tvg-name="Sony Six" tvg-logo="https://images.toffeelive.com/images/program/35354/logo/240x240/mobile_logo_436154001655891624.png" group-title="SPORTS", Sony Sports Ten 5
+https://mflixott.com/tv/toffee/live.php?id=sony_six&e=.m3u8
+
+#EXTINF:-1 tvg-id="star_sports_1" tvg-name="Star Sports 1" tvg-logo="https://images.toffeelive.com/images/program/35351/logo/240x240/mobile_logo_199140001655891503.png" group-title="SPORTS", Star Sports 1
+https://mflixott.com/tv/toffee/live.php?id=star_sports_1&e=.m3u8
+
+#EXTINF:-1 tvg-id="star_sports_2" tvg-name="Star Sports 2" tvg-logo="https://images.toffeelive.com/images/program/35355/logo/240x240/mobile_logo_817921001655891666.png" group-title="SPORTS", Star Sports 2
+https://mflixott.com/tv/toffee/live.php?id=star_sports_2&e=.m3u8
+
+#EXTINF:-1 tvg-id="star_sports_select_1" tvg-name="Star Sports Select 1" tvg-logo="https://images.toffeelive.com/images/program/35356/logo/240x240/mobile_logo_112001001655891708.png" group-title="SPORTS", Star Sports Select 1
+https://mflixott.com/tv/toffee/live.php?id=star_sports_select_1&e=.m3u8
